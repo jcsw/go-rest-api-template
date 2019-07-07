@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  latanton-mariadb:
+    image: "mariadb:10.4-bionic"
+    ports :
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: latanton_pdw
+      MYSQL_DATABASE: latanton_adm
+      MYSQL_USER: latanton
+      MYSQL_PASSWORD: latanton_pdw
+    volumes:
+      - ~/.latanton-mariadb:/var/lib/mysql
+    restart: on-failure

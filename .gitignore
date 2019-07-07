@@ -1,0 +1,11 @@
+# Test binary, build with `go test -c`
+*.test
+
+# Output directory
+/build/
+
+# VScode
+.vscode
+
+# Python
+__pycache__
