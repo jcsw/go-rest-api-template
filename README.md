@@ -2,9 +2,9 @@
 
 ## Requires
 
-Go 1.12.x
-Docker
-Docker Compose
+`Go 1.12.x`
+`Docker`
+`Docker Compose`
 
 ## Begin
 
@@ -52,6 +52,7 @@ MongoDB driver
 
 ```bash
 dep ensure -add go.mongodb.org/mongo-driver/mongo@~1.0.0
+```
 
 Google uuid
 
