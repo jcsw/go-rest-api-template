@@ -18,7 +18,7 @@ func TestSpec(t *testing.T) {
 	Convey("Given an valid Mongodb URI", t, func() {
 
 		sys.Properties = sys.AppProperties{
-			Mongodb: "mongodb://latanton:latanton_pdw@localhost:27017/admin?connectTimeoutMS=1000&serverSelectionTimeoutMS=1000&socketTimeoutMS=1500",
+			Mongodb: "mongodb://gorest:gorest_pdw@localhost:27017/admin?connectTimeoutMS=1000&serverSelectionTimeoutMS=1000&socketTimeoutMS=1500",
 		}
 
 		Convey("When connect an Mongodb", func() {

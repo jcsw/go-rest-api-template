@@ -4,7 +4,7 @@
 server.port: 8010
 
 # MariaDB
-mariadb: latanton:latanton_pdw@tcp(localhost:3306)/latanton_adm
+mariadb: gorest:gorest_pdw@tcp(localhost:3306)/gorest_adm
 
 # MongoDB
-mongodb: mongodb://latanton:latanton_pdw@localhost:27017/admin?connectTimeoutMS=1000&serverSelectionTimeoutMS=1000&socketTimeoutMS=1500
+mongodb: mongodb://gorest:gorest_pdw@localhost:27017/admin?connectTimeoutMS=1000&serverSelectionTimeoutMS=1000&socketTimeoutMS=1500

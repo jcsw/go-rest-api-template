@@ -29,7 +29,7 @@ func IsAlive() bool {
 
 // RetrieveDatabase Return a Mongodb session
 func RetrieveDatabase() *mongo.Database {
-	return db.Database("latanton_adm")
+	return db.Database("gorest_adm")
 }
 
 // Disconnect - Disconnect at Mongodb

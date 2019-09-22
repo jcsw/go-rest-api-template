@@ -59,7 +59,7 @@ deps-stop:
 deps-rm:
 	docker-compose --file docker/mariadb/docker-compose.yml rm
 	docker-compose --file docker/mongodb/docker-compose.yml rm
-	rm -rf ~/.latanton-mariadb:/var/lib/mysql
+	rm -rf ~/.gorest-mariadb:/var/lib/mysql
 
 deps:
 	$(GO_GET) golang.org/x/tools/cmd/cover
