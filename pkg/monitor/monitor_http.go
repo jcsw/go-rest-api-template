@@ -3,9 +3,9 @@ package monitor
 import (
 	http "net/http"
 
-	mariadb "github.com/jcsw/lstanton/pkg/database/mariadb"
-	mongodb "github.com/jcsw/lstanton/pkg/database/mongodb"
-	sys "github.com/jcsw/lstanton/pkg/system"
+	mariadb "github.com/jcsw/go-rest-api-template/pkg/database/mariadb"
+	mongodb "github.com/jcsw/go-rest-api-template/pkg/database/mongodb"
+	sys "github.com/jcsw/go-rest-api-template/pkg/system"
 )
 
 type status struct {

@@ -5,8 +5,8 @@ import (
 
 	. "github.com/smartystreets/goconvey/convey"
 
-	mongodb "github.com/jcsw/lstanton/pkg/database/mongodb"
-	sys "github.com/jcsw/lstanton/pkg/system"
+	mongodb "github.com/jcsw/go-rest-api-template/pkg/database/mongodb"
+	sys "github.com/jcsw/go-rest-api-template/pkg/system"
 )
 
 func TestSpec(t *testing.T) {

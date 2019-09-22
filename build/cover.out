@@ -1,0 +1,21 @@
+mode: count
+github.com/jcsw/go-rest-api-template/pkg/database/mongodb/mongodb.go:20.16,23.2 2 0
+github.com/jcsw/go-rest-api-template/pkg/database/mongodb/mongodb.go:26.21,28.2 1 0
+github.com/jcsw/go-rest-api-template/pkg/database/mongodb/mongodb.go:31.41,33.2 1 0
+github.com/jcsw/go-rest-api-template/pkg/database/mongodb/mongodb.go:36.19,37.15 1 0
+github.com/jcsw/go-rest-api-template/pkg/database/mongodb/mongodb.go:37.15,43.3 4 0
+github.com/jcsw/go-rest-api-template/pkg/database/mongodb/mongodb.go:46.35,50.16 2 0
+github.com/jcsw/go-rest-api-template/pkg/database/mongodb/mongodb.go:55.2,56.16 2 0
+github.com/jcsw/go-rest-api-template/pkg/database/mongodb/mongodb.go:61.2,61.46 1 0
+github.com/jcsw/go-rest-api-template/pkg/database/mongodb/mongodb.go:70.2,70.15 1 0
+github.com/jcsw/go-rest-api-template/pkg/database/mongodb/mongodb.go:50.16,53.3 2 0
+github.com/jcsw/go-rest-api-template/pkg/database/mongodb/mongodb.go:56.16,59.3 2 0
+github.com/jcsw/go-rest-api-template/pkg/database/mongodb/mongodb.go:61.46,64.3 2 0
+github.com/jcsw/go-rest-api-template/pkg/database/mongodb/mongodb.go:64.8,68.3 3 0
+github.com/jcsw/go-rest-api-template/pkg/database/mongodb/mongodb.go:73.16,74.6 1 0
+github.com/jcsw/go-rest-api-template/pkg/database/mongodb/mongodb.go:74.6,76.44 1 0
+github.com/jcsw/go-rest-api-template/pkg/database/mongodb/mongodb.go:84.3,84.31 1 0
+github.com/jcsw/go-rest-api-template/pkg/database/mongodb/mongodb.go:76.44,79.4 2 0
+github.com/jcsw/go-rest-api-template/pkg/database/mongodb/mongodb.go:79.9,82.4 2 0
+github.com/jcsw/go-rest-api-template/pkg/database/mongodb/mongodb.go:88.20,90.2 1 0
+github.com/jcsw/go-rest-api-template/pkg/database/mongodb/mongodb.go:92.22,94.2 1 0

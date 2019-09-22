@@ -8,7 +8,7 @@ import (
 	// Mariadb Driver
 	_ "github.com/go-sql-driver/mysql"
 
-	sys "github.com/jcsw/lstanton/pkg/system"
+	sys "github.com/jcsw/go-rest-api-template/pkg/system"
 )
 
 var (

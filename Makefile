@@ -63,7 +63,7 @@ deps-rm:
 
 deps:
 	$(GO_GET) golang.org/x/tools/cmd/cover
-	$(GO_GET) github.com/golang/lint/golint
+	$(GO_GET) golang.org/x/lint/golint
 	$(DEP_CMD) ensure
 
 build-linux:

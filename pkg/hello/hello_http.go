@@ -3,7 +3,7 @@ package hello
 import (
 	"net/http"
 
-	sys "github.com/jcsw/lstanton/pkg/system"
+	sys "github.com/jcsw/go-rest-api-template/pkg/system"
 )
 
 // Handler - HTTP Handler by /
