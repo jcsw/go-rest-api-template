@@ -50,20 +50,6 @@
   revision = "fce0ec30dd00773d3fa974351d04ce2737b5c4d9"
 
 [[projects]]
-  branch = "master"
-  digest = "1:a3d998a59d865a6b19c6c72d0717d066120f073d19c1fe6369ffe06ed3b007c7"
-  name = "github.com/jcsw/go-rest-api-template"
-  packages = [
-    "pkg/database/mariadb",
-    "pkg/database/mongodb",
-    "pkg/hello",
-    "pkg/monitor",
-    "pkg/system",
-  ]
-  pruneopts = "UT"
-  revision = "8e02d252d7e6ae86bacd10e846d32ad36aa693b6"
-
-[[projects]]
   digest = "1:4b63210654b1f2b664f74ec434a1bb1cb442b3d75742cc064a10808d1cca6361"
   name = "github.com/jtolds/gls"
   packages = ["."]
@@ -189,11 +175,6 @@
     "github.com/go-sql-driver/mysql",
     "github.com/go-yaml/yaml",
     "github.com/google/uuid",
-    "github.com/jcsw/go-rest-api-template/pkg/database/mariadb",
-    "github.com/jcsw/go-rest-api-template/pkg/database/mongodb",
-    "github.com/jcsw/go-rest-api-template/pkg/hello",
-    "github.com/jcsw/go-rest-api-template/pkg/monitor",
-    "github.com/jcsw/go-rest-api-template/pkg/system",
     "github.com/smartystreets/goconvey/convey",
     "go.mongodb.org/mongo-driver/mongo",
     "go.mongodb.org/mongo-driver/mongo/options",
