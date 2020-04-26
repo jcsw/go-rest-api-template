@@ -15,23 +15,19 @@ func TestSpec(t *testing.T) {
 		t.Skip("skipping integration test")
 	}
 
-	Convey("Given an valid Mongodb URI", t, func() {
+	Convey("Given a valid Mongodb URI", t, func() {
 
 		sys.Properties = sys.AppProperties{
 			Mongodb: "mongodb://gorest:gorest_pdw@localhost:27017/admin?connectTimeoutMS=1000&serverSelectionTimeoutMS=1000&socketTimeoutMS=1500",
 		}
 
-		Convey("When connect an Mongodb", func() {
-
+		Convey("When connect on Mongodb", func() {
 			mongodb.Connect()
 			defer mongodb.Disconnect()
 
-			Convey("The Mongodb session it's alive", func() {
+			Convey("Then Mongodb session it's alive", func() {
 				So(mongodb.IsAlive(), ShouldEqual, true)
 			})
-
 		})
-
 	})
-
 }

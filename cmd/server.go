@@ -14,7 +14,7 @@ import (
 
 	mariadb "github.com/jcsw/go-rest-api-template/pkg/database/mariadb"
 	mongodb "github.com/jcsw/go-rest-api-template/pkg/database/mongodb"
-	"github.com/jcsw/go-rest-api-template/pkg/hello"
+	hello "github.com/jcsw/go-rest-api-template/pkg/hello"
 	monitor "github.com/jcsw/go-rest-api-template/pkg/monitor"
 	sys "github.com/jcsw/go-rest-api-template/pkg/system"
 )
