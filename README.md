@@ -2,7 +2,7 @@
 
 ## Requires
 
-`Go 1.12.x`
+`Go 1.14.x`
 `Docker`
 `Docker Compose`
 

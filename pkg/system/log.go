@@ -8,7 +8,7 @@ import (
 var logger = initialize()
 
 func initialize() *log.Logger {
-	return log.New(os.Stdout, "go-rest-api-template ", log.LstdFlags)
+	return log.New(os.Stdout, "grat ", log.LstdFlags)
 }
 
 // Debug - Logging in level DEBUG
