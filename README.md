@@ -3,6 +3,7 @@
 ## Requires
 
 `Go 1.14.x`
+`Dep`
 `Docker`
 `Docker Compose`
 
@@ -21,9 +22,9 @@ make all
 ## Run
 
 ```bash
-make run-deps
+make deps-start
 make run
-make stop-deps
+make deps-stop
 ```
 
 Verify in <http://localhost:8010/>
