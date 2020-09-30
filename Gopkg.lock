@@ -34,12 +34,12 @@
   revision = "196ae77b8a26000fa30caa8b2b541e09674dbc43"
 
 [[projects]]
-  digest = "1:582b704bebaa06b48c29b0cec224a6058a09c86883aaddabde889cd1a5f73e1b"
+  digest = "1:ffe5ba52b122a56df4f9854ea2918e0d9f86e74919db63dc138f8fee3253d3d6"
   name = "github.com/google/uuid"
   packages = ["."]
   pruneopts = "UT"
-  revision = "0cd6bf5da1e1c83f8b45653022c74f71af0538a4"
-  version = "v1.1.1"
+  revision = "0e4e31197428a347842d152773b4cace4645ca25"
+  version = "v1.1.2"
 
 [[projects]]
   branch = "master"
@@ -96,7 +96,7 @@
   name = "github.com/xdg/stringprep"
   packages = ["."]
   pruneopts = "UT"
-  revision = "73f8eece6fdcd902c185bf651de50f3828bed5ed"
+  revision = "28ec3d652c6c3c08aa68bd84d66c2eed01327d2e"
 
 [[projects]]
   digest = "1:721dfafdcdef689834240d27526505237b230b7dea54df28ec299ab182cfbd1f"
@@ -143,7 +143,7 @@
   name = "golang.org/x/crypto"
   packages = ["pbkdf2"]
   pruneopts = "UT"
-  revision = "5c72a883971a4325f8c62bf07b6d38c20ea47a6a"
+  revision = "afb6bcd081ae5258e9449bf8b9af19593c9b261f"
 
 [[projects]]
   branch = "master"
@@ -151,7 +151,7 @@
   name = "golang.org/x/sync"
   packages = ["semaphore"]
   pruneopts = "UT"
-  revision = "6e8e738ad208923de99951fe0b48239bfd864f28"
+  revision = "30421366ff761c80b137fb5084b32278ed41fab0"
 
 [[projects]]
   digest = "1:a2c690dfee42801a26a0e88f69206feca8a3c2437fd476d84767468d7d7708e9"
