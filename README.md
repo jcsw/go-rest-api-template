@@ -2,8 +2,8 @@
 
 ## Requires
 
-`Go 1.14.x`
-`Dep`
+`Go 1.17.x`
+`Make`
 `Docker`
 `Docker Compose`
 
@@ -40,29 +40,29 @@ make itest
 GoConvey - Testing tool
 
 ```bash
-dep ensure -add github.com/smartystreets/goconvey
+github.com/smartystreets/goconvey
 ```
 
 MariaDB driver
 
 ```bash
-dep ensure -add github.com/go-sql-driver/mysql
+github.com/go-sql-driver/mysql
 ```
 
 MongoDB driver
 
 ```bash
-dep ensure -add go.mongodb.org/mongo-driver/mongo@~1.0.0
+go.mongodb.org/mongo-driver/mongo@~1.0.0
 ```
 
 Google uuid
 
 ```bash
-dep ensure -add github.com/google/uuid
+github.com/google/uuid
 ```
 
 Go yaml
 
 ```bash
-dep ensure -add  github.com/go-yaml/yaml
+github.com/go-yaml/yaml
 ```

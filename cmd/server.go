@@ -38,7 +38,6 @@ func main() {
 	router := http.NewServeMux()
 	router.HandleFunc("/health", health)
 	router.HandleFunc("/monitor", monitor.Handler)
-
 	router.HandleFunc("/", hello.Handler)
 
 	server := &http.Server{
