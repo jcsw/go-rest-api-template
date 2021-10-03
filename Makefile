@@ -40,7 +40,7 @@ fmt:
 
 clean:
 	$(GO_CLEAN)
-	rm -R $(BUILD_DIRECTORY)
+	rm -rf $(BUILD_DIRECTORY)
 
 run:
 	$(GO_RUN) $(APP_INIT) -env=dev
