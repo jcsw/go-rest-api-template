@@ -57,7 +57,7 @@ deps-rm:
 	docker-compose --file docker/mongodb/docker-compose.yml rm
 	rm -rf ~/.gorest-mariadb:/var/lib/mysql
 
-deps:
+install:
 	$(GO_GET) -d golang.org/x/tools/cmd/cover
 	$(GO_GET) -d golang.org/x/lint
 	$(GO_CMD) mod tidy
