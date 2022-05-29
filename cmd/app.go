@@ -12,11 +12,11 @@ import (
 
 	uuid "github.com/google/uuid"
 
-	mariadb "github.com/jcsw/go-rest-api-template/pkg/database/mariadb"
-	mongodb "github.com/jcsw/go-rest-api-template/pkg/database/mongodb"
-	hello "github.com/jcsw/go-rest-api-template/pkg/hello"
-	monitor "github.com/jcsw/go-rest-api-template/pkg/monitor"
-	sys "github.com/jcsw/go-rest-api-template/pkg/system"
+	mariadb "go-rest-api-template/pkg/database/mariadb"
+	mongodb "go-rest-api-template/pkg/database/mongodb"
+	hello "go-rest-api-template/pkg/hello"
+	monitor "go-rest-api-template/pkg/monitor"
+	sys "go-rest-api-template/pkg/system"
 )
 
 var healthy int32

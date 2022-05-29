@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	sys "github.com/jcsw/go-rest-api-template/pkg/system"
+	sys "go-rest-api-template/pkg/system"
 )
 
 // Handler - HTTP Handler by /

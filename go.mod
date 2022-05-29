@@ -1,12 +1,11 @@
 module go-rest-api-template
 
-go 1.17
+go 1.18
 
 require (
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/go-yaml/yaml v2.1.0+incompatible
 	github.com/google/uuid v1.3.0
-	github.com/jcsw/go-rest-api-template v0.0.0-20200930224257-9ae6a20b9358
 	github.com/smartystreets/goconvey v1.6.4
 	go.mongodb.org/mongo-driver v1.9.1
 )

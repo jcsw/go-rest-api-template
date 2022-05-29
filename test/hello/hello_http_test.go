@@ -5,7 +5,8 @@ import (
 	httptest "net/http/httptest"
 	testing "testing"
 
-	hello "github.com/jcsw/go-rest-api-template/pkg/hello"
+	hello "go-rest-api-template/pkg/hello"
+
 	. "github.com/smartystreets/goconvey/convey"
 )
 
