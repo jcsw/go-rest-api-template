@@ -4,7 +4,7 @@ import (
 	ioutil "io/ioutil"
 	os "os"
 
-	yaml "github.com/go-yaml/yaml"
+	yaml "gopkg.in/yaml.v3"
 )
 
 // AppProperties define the properties values
@@ -27,7 +27,7 @@ func LoadProperties(env string) {
 		Fatal("[Could not load file of properties] err:%v", err)
 	}
 
-	err = yaml.UnmarshalStrict(file, &Properties)
+	err = yaml.Unmarshal(file, &Properties)
 	if err != nil {
 		Fatal("[Could not load properties values] err:%v", err)
 	}
