@@ -4,10 +4,13 @@ import (
 	hello "go-rest-api-template/pkg/hello"
 	monitor "go-rest-api-template/pkg/infra/monitor"
 	sys "go-rest-api-template/pkg/infra/system"
+
 	http "net/http"
 	regexp "regexp"
 	strings "strings"
 	atomic "sync/atomic"
+
+	promhttp "github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
 type route struct {
@@ -28,6 +31,7 @@ func newRoute(method, pattern string, handler http.HandlerFunc) route {
 
 func handleRouters(mux *http.ServeMux) {
 	mux.HandleFunc("/", buildRouters)
+	mux.Handle("/metrics", promhttp.Handler())
 }
 
 func buildRouters(w http.ResponseWriter, r *http.Request) {

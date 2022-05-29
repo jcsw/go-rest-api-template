@@ -35,6 +35,7 @@ func main() {
 
 	mariadb.Connect()
 	mongodb.Connect()
+	initMetrics()
 
 	startServer(server)
 	<-quit

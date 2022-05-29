@@ -4,6 +4,7 @@ import (
 	context "context"
 	sys "go-rest-api-template/pkg/infra/system"
 	http "net/http"
+	"strconv"
 	time "time"
 
 	uuid "github.com/google/uuid"
@@ -39,6 +40,7 @@ func tracing() func(http.Handler) http.Handler {
 			wrw := wrapResponseWriter(w)
 			next.ServeHTTP(wrw, r.WithContext(ctx))
 
+			httpRequestMetric(r.URL.Path, r.Method, strconv.Itoa(wrw.statusCode), float64(time.Since(start).Milliseconds()))
 			sys.Info("[tracing][%s][%s][%s][%d][%v]", requestID, r.Method, r.URL.Path, wrw.statusCode, time.Since(start))
 		})
 	}

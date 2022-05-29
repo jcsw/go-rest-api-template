@@ -2,15 +2,15 @@
 
 ## Requires
 
-`Go 1.17.x`
+`Go 1.18.x`
 `Make`
 `Docker`
 `Docker Compose`
 
-## Begin
+## Install
 
 ```bash
-make deps
+make install
 ```
 
 ## Build
@@ -35,34 +35,19 @@ Verify in <http://localhost:8010/>
 make itest
 ```
 
-## Pedendencies
+## Curls
 
-GoConvey - Testing tool
-
+Ping
 ```bash
-github.com/smartystreets/goconvey
+curl --location --request GET 'http://localhost:8010/ping'
 ```
 
-MariaDB driver
-
+Monitors
 ```bash
-github.com/go-sql-driver/mysql
+curl --location --request GET 'http://localhost:8010/monitor'
 ```
 
-MongoDB driver
-
+Metrics (Prometheus)
 ```bash
-go.mongodb.org/mongo-driver/mongo@~1.0.0
-```
-
-Google uuid
-
-```bash
-github.com/google/uuid
-```
-
-Go yaml
-
-```bash
-github.com/go-yaml/yaml
+curl --location --request GET 'http://localhost:8010/metrics'
 ```
