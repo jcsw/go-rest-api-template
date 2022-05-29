@@ -8,7 +8,7 @@ import (
 var logger = initialize()
 
 func initialize() *log.Logger {
-	return log.New(os.Stdout, "app ", log.LstdFlags)
+	return log.New(os.Stdout, "[app] ", log.LstdFlags)
 }
 
 // Debug - Logging in level DEBUG

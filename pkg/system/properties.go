@@ -19,18 +19,18 @@ var Properties AppProperties
 
 // LoadProperties load properties in by environment
 func LoadProperties(env string) {
-	Info("Loading properties by env [%s].", env)
+	Info("[Loading properties by env %s]", env)
 
 	pwd, _ := os.Getwd()
 	file, err := ioutil.ReadFile(pwd + "/properties/" + env + ".yaml")
 	if err != nil {
-		Fatal("Could not load file of properties, err:%v", err)
+		Fatal("[Could not load file of properties] err:%v", err)
 	}
 
 	err = yaml.UnmarshalStrict(file, &Properties)
 	if err != nil {
-		Fatal("Could not load properties values, err:%v", err)
+		Fatal("[Could not load properties values] err:%v", err)
 	}
 
-	Info("Properties loaded with successful.")
+	Info("[Properties loaded with successful]")
 }

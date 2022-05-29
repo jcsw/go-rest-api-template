@@ -36,7 +36,7 @@ func RetrieveClient() *sql.DB {
 func Disconnect() {
 	if db != nil {
 		db.Close()
-		sys.Info("Mariadb session it's closed.")
+		sys.Info("[Mariadb session closed]")
 	}
 }
 
@@ -45,17 +45,17 @@ func createClient() *sql.DB {
 	db, err := sql.Open("mysql", sys.Properties.Mariadb)
 
 	if err != nil {
-		sys.Error("Could not create Mariadb client, err:%+v", err)
+		sys.Error("[Could not create Mariadb client] err:%+v", err)
 		return nil
 	}
 
 	if err := db.Ping(); err != nil {
 		setStatusDown()
-		sys.Warn("Could create a Mariadb session. err:%+v", err)
+		sys.Warn("[Could create a Mariadb session] err:%+v", err)
 	} else {
 		var version string
 		db.QueryRow("SELECT VERSION()").Scan(&version)
-		sys.Info("Mariadb connected with version:[%s].", version)
+		sys.Info("[Mariadb connected with version: %s]", version)
 		setStatusUp()
 	}
 
@@ -65,15 +65,15 @@ func createClient() *sql.DB {
 func monitor() {
 	for {
 
+		time.Sleep(30 * time.Second)
+
 		if db == nil || db.Ping() != nil {
 			setStatusDown()
-			sys.Warn("Mariadb session is not active, trying to reconnect...")
+			sys.Warn("[Mariadb session is not active, trying to reconnect]")
 		} else {
 			setStatusUp()
-			sys.Info("Mariadb session it's alive.")
+			sys.Info("[Mariadb session it's alive]")
 		}
-
-		time.Sleep(30 * time.Second)
 	}
 }
 

@@ -39,7 +39,7 @@ func Disconnect() {
 		defer cancel()
 
 		db.Disconnect(ctx)
-		sys.Info("Mongodb session it's closed.")
+		sys.Info("[Mongodb session closed]")
 	}
 }
 
@@ -48,23 +48,23 @@ func createClient() *mongo.Client {
 	client, err := mongo.NewClient(options.Client().ApplyURI(sys.Properties.Mongodb))
 
 	if err != nil {
-		sys.Error("Could not create Mongodb client, err:%+v", err)
+		sys.Error("[Could not create Mongodb client] err:%+v", err)
 		return nil
 	}
 
 	err = client.Connect(context.TODO())
 	if err != nil {
-		sys.Error("Could not connect at Mongodb, err:%+v", err)
+		sys.Error("[Could not connect at Mongodb] err:%+v", err)
 		return nil
 	}
 
-	if err := client.Ping(nil, nil); err != nil {
+	if err := client.Ping(context.TODO(), nil); err != nil {
 		setStatusDown()
-		sys.Warn("Could create a Mongodb session. err:%+v", err)
+		sys.Warn("[Could create a Mongodb session] err:%+v", err)
 	} else {
 		setStatusUp()
-		dataBases, _ := client.ListDatabases(nil, nil, nil)
-		sys.Info("Mongodb session created with databases:[%+v].", dataBases)
+		dataBases, _ := client.ListDatabases(context.TODO(), nil, nil)
+		sys.Info("[Mongodb session created with databases: %+v]", dataBases)
 	}
 
 	return client
@@ -73,15 +73,16 @@ func createClient() *mongo.Client {
 func monitor() {
 	for {
 
-		if db == nil || db.Ping(nil, nil) != nil {
+		time.Sleep(30 * time.Second)
+
+		if db == nil || db.Ping(context.TODO(), nil) != nil {
 			setStatusDown()
-			sys.Warn("Mongodb session is not active, trying to reconnect...")
+			sys.Warn("[Mongodb session is not active, trying to reconnect]")
 		} else {
 			setStatusUp()
-			sys.Info("Mongodb session it's alive.")
+			sys.Info("[Mongodb session it's alive]")
 		}
 
-		time.Sleep(30 * time.Second)
 	}
 }
 
