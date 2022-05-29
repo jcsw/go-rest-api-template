@@ -3,9 +3,9 @@ package monitor
 import (
 	http "net/http"
 
-	mariadb "go-rest-api-template/pkg/database/mariadb"
-	mongodb "go-rest-api-template/pkg/database/mongodb"
-	sys "go-rest-api-template/pkg/system"
+	mariadb "go-rest-api-template/pkg/infra/database/mariadb"
+	mongodb "go-rest-api-template/pkg/infra/database/mongodb"
+	sys "go-rest-api-template/pkg/infra/system"
 )
 
 type status struct {
@@ -13,8 +13,8 @@ type status struct {
 	Status    string `json:"status"`
 }
 
-// Handler function to handle "/monitor"
-func Handler(w http.ResponseWriter, r *http.Request) {
+// Get function to handle GET /monitor
+func Get(w http.ResponseWriter, r *http.Request) {
 	allStatus := []status{}
 
 	allStatus = append(allStatus, mongodbStatus())

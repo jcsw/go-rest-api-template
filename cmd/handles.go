@@ -2,7 +2,7 @@ package main
 
 import (
 	context "context"
-	sys "go-rest-api-template/pkg/system"
+	sys "go-rest-api-template/pkg/infra/system"
 	http "net/http"
 	time "time"
 

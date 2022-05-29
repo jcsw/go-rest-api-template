@@ -8,7 +8,7 @@ import (
 	mongo "go.mongodb.org/mongo-driver/mongo"
 	options "go.mongodb.org/mongo-driver/mongo/options"
 
-	sys "go-rest-api-template/pkg/system"
+	sys "go-rest-api-template/pkg/infra/system"
 )
 
 var (

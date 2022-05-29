@@ -10,9 +10,9 @@ import (
 	atomic "sync/atomic"
 	time "time"
 
-	mariadb "go-rest-api-template/pkg/database/mariadb"
-	mongodb "go-rest-api-template/pkg/database/mongodb"
-	sys "go-rest-api-template/pkg/system"
+	mariadb "go-rest-api-template/pkg/infra/database/mariadb"
+	mongodb "go-rest-api-template/pkg/infra/database/mongodb"
+	sys "go-rest-api-template/pkg/infra/system"
 )
 
 var healthy int32

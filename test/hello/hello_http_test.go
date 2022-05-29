@@ -14,9 +14,9 @@ func TestSpec(t *testing.T) {
 
 	Convey("Given a GET request", t, func() {
 
-		req, _ := http.NewRequest("GET", "/hello", nil)
+		req, _ := http.NewRequest("GET", "/hello?name=test", nil)
 		resp := httptest.NewRecorder()
-		handler := http.HandlerFunc(hello.Handler)
+		handler := http.HandlerFunc(hello.Get)
 
 		Convey("When receive request", func() {
 
@@ -26,8 +26,8 @@ func TestSpec(t *testing.T) {
 				So(resp.Code, ShouldEqual, http.StatusOK)
 			})
 
-			Convey("And text 'Hello World!!'", func() {
-				So(resp.Body.String(), ShouldEqual, "\"Hello World!!\"")
+			Convey("And text 'Hello test'", func() {
+				So(resp.Body.String(), ShouldEqual, "\"Hello test\"")
 			})
 		})
 	})
