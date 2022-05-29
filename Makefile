@@ -12,7 +12,7 @@ GO_FMT=gofmt
 BUILD_DIRECTORY=./build
 BINARY_NAME=rest-api
 BINARY_UNIX=$(BINARY_NAME)_unix
-APP_INIT=./cmd/server.go
+APP_INIT=./cmd/app.go
 
 SRC=$(shell find . -type f -name '*.go' -not -path "./vendor/*")
 PKG=$(shell go list ./... | grep -v /vendor/)

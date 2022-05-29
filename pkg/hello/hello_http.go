@@ -1,6 +1,7 @@
 package hello
 
 import (
+	"fmt"
 	"net/http"
 
 	sys "github.com/jcsw/go-rest-api-template/pkg/system"
@@ -21,5 +22,6 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func helloWorld(w http.ResponseWriter, r *http.Request) {
-	sys.HTTPResponseWithJSON(w, 200, "Hello World!!")
+	name := r.URL.Query().Get("name")
+	sys.HTTPResponseWithJSON(w, 200, fmt.Sprintf("Hello %s", name))
 }

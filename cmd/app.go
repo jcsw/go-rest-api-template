@@ -23,7 +23,7 @@ var healthy int32
 var env string
 
 func main() {
-	sys.Info("Server initializing...")
+	sys.Info("[Server initializing]")
 
 	flag.StringVar(&env, "env", "prod", "Environment")
 	flag.Parse()
@@ -36,9 +36,9 @@ func main() {
 	port := sys.Properties.ServerPort
 
 	router := http.NewServeMux()
-	router.HandleFunc("/health", health)
+	router.HandleFunc("/ping", ping)
 	router.HandleFunc("/monitor", monitor.Handler)
-	router.HandleFunc("/", hello.Handler)
+	router.HandleFunc("/hello", hello.Handler)
 
 	server := &http.Server{
 		Addr:         fmt.Sprintf(":%d", port),
@@ -53,7 +53,7 @@ func main() {
 
 	go func() {
 		<-quit
-		sys.Info("Server shutting down...")
+		sys.Info("[Server shutting down]")
 
 		atomic.StoreInt32(&healthy, 0)
 
@@ -65,17 +65,17 @@ func main() {
 
 		server.SetKeepAlivesEnabled(false)
 		if err := server.Shutdown(ctx); err != nil {
-			sys.Fatal("Could not gracefully shutdown the server, err:%v", err)
+			sys.Fatal("[Could not gracefully shutdown the server] err:%v", err)
 		}
 
-		sys.Info("Shutdown complete, bye bye.")
+		sys.Info("[Shutdown complete, bye bye]")
 	}()
 
 	atomic.StoreInt32(&healthy, 1)
-	sys.Info("Server is ready to handle requests at port [%d].", port)
+	sys.Info("[Server is ready to handle requests at port %d]", port)
 
 	if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-		sys.Fatal("Could not listen on port [%d], err:%v", port, err)
+		sys.Fatal("[Could not listen on port %d] err:%v", port, err)
 	}
 }
 
@@ -103,23 +103,20 @@ func tracing() func(http.Handler) http.Handler {
 				requestID = uuid.New().String()
 			}
 
-			sys.Info("--> [%s] request [%s] on [%s] by %s", requestID, r.Method, r.URL.Path, r.RemoteAddr)
-
 			ctx := context.WithValue(r.Context(), sys.ContextKeyRequestID, requestID)
 			w.Header().Set("X-Request-Id", requestID)
 
 			wrw := wrapResponseWriter(w)
 			next.ServeHTTP(wrw, r.WithContext(ctx))
 
-			sys.Info("<-- [%s] response [%d] in [%v]", requestID, wrw.statusCode, time.Since(start))
+			sys.Info("[tracing][%s][%s][%s][%d][%v]", requestID, r.Method, r.URL.Path, wrw.statusCode, time.Since(start))
 		})
 	}
 }
 
-func health(w http.ResponseWriter, r *http.Request) {
+func ping(w http.ResponseWriter, r *http.Request) {
 	if atomic.LoadInt32(&healthy) == 1 {
-		w.WriteHeader(http.StatusNoContent)
-		return
+		w.WriteHeader(http.StatusOK)
 	}
 	w.WriteHeader(http.StatusServiceUnavailable)
 }
