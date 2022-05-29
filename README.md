@@ -1,4 +1,4 @@
-# Golang Rest API Template - MongoDB, MariaDB
+# Golang REST API with MongoDB, MariaDB, Prometheus
 
 ## Requires
 
