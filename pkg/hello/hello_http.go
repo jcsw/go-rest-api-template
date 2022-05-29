@@ -7,12 +7,13 @@ import (
 	sys "go-rest-api-template/pkg/system"
 )
 
-// Handler - HTTP Handler by /
+// Handler - HTTP Handler by /hello
 func Handler(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
 		{
 			helloWorld(w, r)
+			break
 		}
 	default:
 		{
